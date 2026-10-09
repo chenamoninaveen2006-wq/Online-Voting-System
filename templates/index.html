@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elections – Cast Your Golden Opportunity</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Mukta:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--saf:#ff9933;--grn:#138808;--nav:#0b2a5b;--bg:#fffaf2;--fg:#14193a;--card:#fff;--line:#eadfc8;--mut:#566;--bad:#c62828;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10152e;--fg:#f4efe2;--card:#1a2242;--line:#2d3862;--mut:#aab3d6;--bad:#ff8a80}}
+:root[data-theme="dark"]{--bg:#10152e;--fg:#f4efe2;--card:#1a2242;--line:#2d3862;--mut:#aab3d6;--bad:#ff8a80}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 Mukta,system-ui,sans-serif}
+h1,h2,h3{font-family:"Baloo 2",system-ui,sans-serif;margin:0 0 .4rem;line-height:1.1}
+.hide{display:none!important}
+button{font:700 1rem Mukta,sans-serif;padding:.65rem 1.1rem;border:0;border-radius:12px;background:var(--nav);color:#fff;cursor:pointer}
+button:focus-visible,input:focus{outline:3px solid var(--saf);outline-offset:2px}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.g{background:var(--grn)}button.s{background:var(--saf);color:#14193a}button.o{background:transparent;color:inherit;border:2px solid currentColor}button.r{background:var(--bad);color:#fff}button.l{background:none;color:var(--nav);padding:.3rem;text-decoration:underline}
+input{width:100%;padding:.7rem .8rem;border:2px solid var(--line);border-radius:12px;font:inherit;background:var(--bg);color:var(--fg)}
+label{display:block;font-weight:700;margin:.7rem 0 .2rem}
+.msg{font-weight:700;margin:.6rem 0 0}.e{color:var(--bad)}.k{color:var(--grn)}
+.tri{height:12px;background:linear-gradient(90deg,#ff9933 33.3%,#fff 33.3% 66.6%,#138808 66.6%);border-bottom:1px solid var(--line)}
+/* home */
+.nb{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.7rem 1.2rem;background:var(--card);border-bottom:1px solid var(--line)}
+.nb b{font:800 1.5rem "Baloo 2",sans-serif;display:block;line-height:1}.nb small{color:var(--mut);font-weight:600}
+.nb nav button{background:none;color:var(--fg);padding:.4rem .8rem}
+.wide{max-width:1100px;margin:0 auto;padding:0 1rem}
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,color-mix(in srgb,#ff9933 20%,var(--bg)),var(--bg) 48%,color-mix(in srgb,#138808 16%,var(--bg)))}
+.sw{position:absolute;height:34px;width:60%;border-radius:50%;transform:rotate(-12deg);opacity:.85}
+.hero .wide{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:1.5rem;align-items:center;padding-top:2.2rem;padding-bottom:2rem}
+@media(max-width:760px){.hero .wide{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.6rem,8vw,4.8rem);font-weight:800;color:var(--nav)}
+.hero .w{font:600 1.5rem "Baloo 2",sans-serif}
+.gold{font:800 clamp(1.3rem,3.6vw,2rem) "Baloo 2",sans-serif;background:linear-gradient(90deg,#e07b00,#138808);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.1rem 0}
+.door{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:.9rem 1.4rem;border-radius:14px;box-shadow:0 5px 0 #0b5a05;background:var(--grn);min-width:200px}.door small{font-weight:400;opacity:.9}
+.door.a{background:#f07c00;box-shadow:0 5px 0 #a85200}
+.pills{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-weight:700;color:var(--mut)}
+.art{display:grid;place-items:center;gap:.6rem}
+.chakra{width:min(52vw,210px);aspect-ratio:1;border-radius:50%;border:9px solid var(--nav);background:repeating-conic-gradient(var(--nav) 0 2deg,transparent 2deg 15deg);position:relative;animation:spin 30s linear infinite}
+.chakra:after{content:"☝️";position:absolute;inset:0;display:grid;place-items:center;font-size:3.4rem;animation:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.chakra{animation:none}}
+.art i{font:600 1.5rem "Baloo 2",sans-serif;color:var(--grn);transform:rotate(-4deg)}
+.panel{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:1rem 1.2rem}
+.panel li{list-style:none;padding:.25rem 0;font-weight:600}
+.sec{padding:1.6rem 0}.sec h2{font-size:1.7rem}.sec>p{color:var(--mut);margin:0 0 1rem}
+.grid{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.fc{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:.9rem;border-top:6px solid var(--c)}.fc span{font-size:1.8rem}.fc b{display:block}.fc small{color:var(--mut)}
+.flow{display:flex;gap:.3rem;overflow-x:auto;align-items:flex-start;padding:.4rem 0}.flow em{color:var(--mut);font-style:normal;margin-top:.2rem}
+.fs{display:flex;flex-direction:column;align-items:center;min-width:72px;text-align:center;font-size:.82rem;font-weight:600}.fs i{width:30px;height:30px;border-radius:50%;color:#fff;font:700 .95rem Mukta;display:grid;place-items:center;font-style:normal}.fs.dim{opacity:.35}
+.foot{background:var(--nav);color:#fff;text-align:center;padding:1.2rem;font-weight:600}.foot i{font:600 1.5rem "Baloo 2",sans-serif}
+/* voter */
+.wrap{max-width:620px;margin:0 auto;padding:1rem}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:1.1rem;margin-bottom:1rem}
+.card.t{border-top:8px solid var(--saf)}.card.n{border-top:8px solid var(--nav)}.card.v{border-top:8px solid var(--grn)}
+.sms{background:#fff7d6;color:#4a3800;border-radius:14px;padding:.7rem .9rem;margin:.8rem 0;box-shadow:0 4px 14px #0003}
+.obx{display:flex;gap:.4rem}.ob{width:48px;height:56px;text-align:center;font-size:1.5rem;padding:0}
+.cam{max-width:340px;margin:.6rem 0}video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:#000;transform:scaleX(-1);border:4px solid var(--grn)}
+.cands{display:grid;gap:.6rem;margin:.8rem 0}
+.cand{display:flex;gap:.8rem;align-items:center;padding:.8rem;border:2px solid var(--line);border-radius:14px;cursor:pointer}
+.cand input{width:auto}.cand:has(input:checked){border-color:var(--grn);background:color-mix(in srgb,var(--grn) 15%,var(--card))}
+.cand small{color:var(--mut);display:block}.sym{font-size:2rem}
+.done{text-align:center}.done h2{font-size:clamp(2.2rem,9vw,3.4rem);background:linear-gradient(90deg,#ff9933,#0b2a5b,#138808);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rcp{border:2px dashed var(--grn);border-radius:12px;padding:.6rem;margin:.8rem auto;max-width:260px}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:9}
+/* admin */
+#admin{min-height:100svh;background:#0b1240;color:#eef;--card:#151d57;--line:#2a3690;--bg:#0b1240;--fg:#eef;--mut:#aab}
+#admin .card{border-top-color:var(--saf)}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0 1rem}.tabs button{background:#1d2870}.tabs button.on{background:var(--saf);color:#14193a}
+.stats{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:1rem}.stat{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:.8rem}.stat b{display:block;font:800 1.8rem "Baloo 2",sans-serif;color:var(--saf)}
+.bar{height:20px;background:#0b1240;border-radius:10px;overflow:hidden;margin:.2rem 0 .7rem}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff9933,#138808)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:.45rem;border-bottom:1px solid var(--line);white-space:nowrap}
+td img{width:48px;height:36px;border-radius:6px;object-fit:cover}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:end}.row>div{flex:1 1 140px}
+.st{border-radius:14px;padding:1rem;text-align:center;font-weight:800;font-size:1.2rem;margin:.6rem 0}.st.on{background:#0f3d1c;color:#9df0b3}.st.off{background:#4a1414;color:#ffb4ab}
+.md{position:fixed;inset:0;background:#000a;display:grid;place-items:center;z-index:20;padding:1rem}.mc{background:#fff;color:#14193a;border-radius:16px;padding:1.3rem;max-width:380px;width:100%;text-align:center}.mc div{display:flex;gap:.6rem;justify-content:center;margin-top:1rem}
+</style></head><body>
+
+<section id="home">
+<div class="tri"></div>
+<div class="nb"><div><b>🏛️ Elections</b><small>Cast Your Golden Opportunity</small></div>
+<nav><button onclick="jump('hero')">Home</button><button onclick="jump('how')">How It Works</button><button onclick="jump('need')">Get Started</button></nav></div>
+<div class="hero" id="hero"><span class="sw" style="background:#ff9933;left:-12%;top:-8px"></span><span class="sw" style="background:#138808;right:-12%;bottom:-8px"></span>
+<div class="wide"><div><div class="w">Welcome to</div><h1>Elections</h1><div class="gold">Cast Your Golden Opportunity</div>
+<p style="max-width:44ch;font-size:1.1rem">A secure, simple and transparent way to make your voice count. Verify with Aadhaar and OTP, then vote on camera.</p>
+<div class="btns"><button class="door" onclick="go('voter')"><span>👤 Voter Portal →</span><small>Cast your vote</small></button><button class="door a" onclick="go('admin')"><span>⚙️ Admin Portal →</span><small>Manage election</small></button></div>
+<div class="pills"><span>🔒 Secure</span><span>🛡️ Transparent</span><span>⚡ Easy to use</span><span>👥 For a better tomorrow</span></div></div>
+<div class="art"><div class="chakra" aria-hidden="true"></div><i>Vote for a Stronger India</i>
+<div class="panel" style="width:100%"><h3>Your vote matters</h3><ul style="margin:0;padding:0"><li>🔐 Secure Aadhaar based verification</li><li>🙋 One vote per person</li><li>📷 Camera check for genuine voting</li><li>📊 Real-time results for the admin</li><li>#️⃣ Aadhaar stored as a hash, not plain</li></ul></div></div></div></div>
+<div class="wide sec"><h2>Key features</h2><p>Built for a fair, secure and transparent election.</p><div class="grid" id="feat"></div></div>
+<div class="wide sec" id="how"><h2>How it works</h2><p>Eight steps for every voter and eight for the admin.</p><h3>Voter flow</h3><div class="flow" id="fv"></div><h3 style="margin-top:.8rem">Admin flow</h3><div class="flow" id="fa"></div></div>
+<div class="wide sec" id="need"><h2>What you need to get started</h2><p>Keep these ready before you begin.</p><div class="grid" id="need2"></div></div>
+<div class="foot">Elections · Demo Project · Not for real elections<br><small>Do not enter real Aadhaar details. OTP and voter records are simulated in this browser.</small><br><i>Jai Hind 🇮🇳</i></div>
+</section>
+
+<section id="voter" class="hide"><div class="tri"></div><div class="wrap">
+<div class="top"><h2>👤 Voter portal</h2><button class="o" onclick="go('home')">Home</button></div>
+<div class="flow" id="trk"></div>
+
+<div class="card t" id="p0"><h2>Voter verification</h2><p style="margin:0;color:var(--mut)" id="vT"></p>
+<label for="aad">Aadhaar number (12 digits)</label><input id="aad" inputmode="numeric" maxlength="12" placeholder="1234 5678 9012">
+<label for="ph">Mobile number (10 digits)</label><input id="ph" inputmode="numeric" maxlength="10" placeholder="98765 43210">
+<p style="margin:1rem 0 0"><button class="g" onclick="sendOtp()">Send OTP</button></p><p class="msg e" id="m0"></p></div>
+
+<div class="card n hide" id="p1"><h2>Enter OTP</h2><p style="margin:0">A 6-digit code has been sent to your mobile number.</p>
+<div class="sms hide" id="sms"></div><div class="obx" id="obx" style="margin:.8rem 0"></div>
+<p style="margin:0;font-weight:700">⏱ <span id="left"></span></p><p style="margin:.2rem 0;color:var(--mut)">Valid for 2 minutes · 1 OTP per mobile · 3 wrong tries lock</p>
+<p style="margin:.8rem 0 0"><button class="g" onclick="verifyOtp()">Verify OTP</button> <button class="l hide" id="rs" onclick="sendOtp()">Resend OTP</button> <button class="l" onclick="vStep(0)">Change number</button></p><p class="msg e" id="m1"></p></div>
+
+<div class="card n hide" id="p2"><h2>Voting instructions</h2><ol><li>Keep your face in front of the camera.</li><li>Only one vote is allowed per Aadhaar.</li><li>Results are kept with the admin.</li><li>Do not close the browser or refresh the page.</li></ol><button class="g" onclick="vStep(3)">I understand</button></div>
+
+<div class="card v hide" id="p3"><h2>Allow camera access</h2><p style="margin:0">Keep your face in the frame. Voting is allowed only when exactly one face is detected (in supported browsers).</p>
+<div class="cam"><video id="cam5" autoplay muted playsinline></video></div><p class="msg" id="cm">Camera is off.</p>
+<button onclick="startCam()">📷 Allow camera</button> <button class="g" id="c5" onclick="vStep(4)" disabled>Continue</button> <button class="l" onclick="stopCam();go('home')">I'll do it later</button></div>
+
+<div class="card t hide" id="p4"><h2>Choose your candidate</h2><div class="cands" id="cands"></div><button class="g" id="nx" onclick="toConfirm()" disabled>Next</button> <button class="l" onclick="vStep(3)">Back</button></div>
+
+<div class="card v hide" id="p5"><h2>Confirm your vote</h2><div class="cand" id="pick" style="cursor:default"></div>
+<div class="cam"><video id="cam7" autoplay muted playsinline></video></div><p class="msg" id="cm7"></p>
+<p style="margin:0;color:var(--mut)">Your photo will be captured and your vote saved. Your Aadhaar is stored only as a hash.</p>
+<p style="margin:1rem 0 0"><button class="g" id="cb" onclick="cast()" disabled>✔ Cast vote</button> <button class="l" onclick="vStep(4)">Back</button></p><p class="msg e" id="m5"></p></div>
+
+<div class="card v done hide" id="p6"><h2>Great journey! 🇮🇳</h2><p style="font-size:1.25rem;font-weight:800;margin:.2rem 0">Jai Hind!</p><div class="rcp">Receipt ID<br><b id="rid" style="font-size:1.3rem"></b></div><p>Thank you for voting!</p><button onclick="resetVoter();go('home')">Back to home</button></div>
+</div><canvas id="cf" class="hide"></canvas></section>
+
+<section id="admin" class="hide"><div class="tri"></div><div class="wrap" style="max-width:900px">
+<div class="top"><h2>⚙️ Admin portal</h2><button class="o" onclick="go('home')">Home</button></div>
+<div id="aL" class="card" style="max-width:420px"><h2>Admin login</h2>
+<label for="au">Username</label><input id="au" autocomplete="username"><label for="ap">Password</label><input id="ap" type="password" autocomplete="current-password">
+<p style="margin:1rem 0 0"><button class="s" onclick="aLogin()">Login</button></p><p class="msg e" id="am"></p><p style="color:var(--mut);margin:.6rem 0 0">Use admin / admin123 for demo</p></div>
+<div id="aA" class="hide"><div class="tabs" id="tabs"></div><div id="aB"></div></div>
+</div></section>
+
+<div class="md hide" id="md"><div class="mc"><h3 id="mt"></h3><p id="mx" style="margin:0"></p><div><button class="o" onclick="$('md').classList.add('hide')">Cancel</button><button class="r" id="mb"></button></div></div></div>
+
+<script>
+const $=i=>document.getElementById(i);let mem={};
+// State is stored by Flask in SQLite so it survives browser refreshes and is shared by local sessions.
+const db={get(k,d){try{const x=new XMLHttpRequest();x.open('GET','/api/demo-state/'+encodeURIComponent(k),false);x.send();if(x.status===200){const r=JSON.parse(x.responseText);return r.exists?r.value:d}}catch(e){} try{const v=localStorage.getItem('e_'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{const x=new XMLHttpRequest();x.open('POST','/api/demo-state/'+encodeURIComponent(k),false);x.setRequestHeader('Content-Type','application/json');x.send(JSON.stringify({value:v}));if(x.status===200)return}catch(e){} try{localStorage.setItem('e_'+k,JSON.stringify(v))}catch(e){mem['e_'+k]=v}}};
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const say=(el,t,c)=>{el.textContent=t;el.className='msg '+(c||'e')};
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(x=>x.toString(16).padStart(2,'0')).join('');
+const rnd=(n,m)=>{const a=new Uint32Array(1);crypto.getRandomValues(a);return n+a[0]%m};
+if(!db.get('cands',null))db.set('cands',[{id:1,name:'Aarav Sharma',party:'Unity Alliance',sym:'🌻'},{id:2,name:'Priya Verma',party:'Progress Front',sym:'🦚'},{id:3,name:'Rohan Das',party:"People's Voice",sym:'⛵'},{id:4,name:'Sneha Iyer',party:'Youth Forum',sym:'🔔'}]);
+const title=()=>db.get('title','General Election 2026');
+const fl=(a,c,cur)=>a.map((t,i)=>`<div class="fs${cur!=null&&i>cur?' dim':''}"><i style="background:${c}">${i+1}</i><span>${t}</span></div>`).join('<em>→</em>');
+const VL=['Home','Verify','Enter OTP','Instructions','Camera','Choose','Cast Vote','Done'],AL=['Home','Login','Set Up','Open Voting','Monitor','Close','Reset','Log Out'];
+$('fv').innerHTML=fl(VL,'#138808');$('fa').innerHTML=fl(AL,'#f07c00');
+$('feat').innerHTML=[['🛡️','Aadhaar verification','Secure, authentic voter identity.','#2f6fed'],['📷','Face detection','Ensures a real voter is casting the vote.','#138808'],['📱','OTP security','6-digit OTP, valid 2 minutes, 3 wrong tries lock it.','#ff9933'],['🗳️','One vote rule','Prevents duplicate voting.','#8e44ad'],['👁️','Live results','Track results in real time (admin only).','#0aa'],['🔒','Privacy first','Aadhaar stored as a hash.','#6a4bd8'],['🧾','Digital receipt','Get a unique receipt ID after voting.','#3f51b5'],['✨','User friendly','Simple steps, clean interface.','#e07b00']].map(f=>`<div class="fc" style="--c:${f[3]}"><span>${f[0]}</span><b>${f[1]}</b><small>${f[2]}</small></div>`).join('');
+$('need2').innerHTML=[['🪪','Aadhaar number','12 digits, linked to your mobile.','#ff9933'],['📱','Mobile number','10-digit number linked with Aadhaar.','#2f6fed'],['📷','Camera access','Allow camera permission in your browser.','#138808'],['📶','Stable internet','A good connection for smooth voting.','#0aa']].map(f=>`<div class="fc" style="--c:${f[3]}"><span>${f[0]}</span><b>${f[1]}</b><small>${f[2]}</small></div>`).join('');
+$('obx').innerHTML=[0,1,2,3,4,5].map(i=>`<input class="ob" inputmode="numeric" maxlength="1" aria-label="OTP digit ${i+1}" oninput="obIn(event,${i})" onkeydown="obKey(event,${i})" onpaste="obPaste(event)">`).join('');
+const ob=()=>[...document.querySelectorAll('.ob')];
+function obIn(e,i){e.target.value=e.target.value.replace(/\D/g,'').slice(-1);if(e.target.value&&ob()[i+1])ob()[i+1].focus()}
+function obKey(e,i){if(e.key==='Backspace'&&!e.target.value&&i>0)ob()[i-1].focus()}
+function obPaste(e){const d=(e.clipboardData.getData('text')||'').replace(/\D/g,'').slice(0,6);if(!d)return;e.preventDefault();ob().forEach((b,i)=>b.value=d[i]||'')}
+function go(p){location.hash=p}
+function jump(id){go('home');setTimeout(()=>$(id).scrollIntoView({behavior:'smooth'}),60)}
+function route(){let p=(location.hash||'#home').slice(1);if(!['home','voter','admin'].includes(p))p='home';
+ ['home','voter','admin'].forEach(x=>$(x).classList.toggle('hide',x!==p));$('vT').textContent=title();
+ if(p!=='voter')stopCam();if(p==='voter')vStep(vs);if(p==='admin')aShow()}
+addEventListener('hashchange',route);
+function ask(t,x,b,f){$('mt').textContent=t;$('mx').textContent=x;$('mb').textContent=b;$('mb').onclick=()=>{$('md').classList.add('hide');f()};$('md').classList.remove('hide')}
+
+/* ---------- voter ---------- */
+let vs=0,voter=null,stream=null,fdt=null,faceOK=false,tm=null,pickId=null;
+function vStep(n){vs=n;for(let i=0;i<7;i++)$('p'+i).classList.toggle('hide',i!==n);$('trk').innerHTML=fl(VL,'#138808',n+1)}
+async function sendOtp(){const a=$('aad').value.trim(),p=$('ph').value.trim(),m=$('m0');say(m,'');
+ if(!db.get('open',true))return say(m,'Voting is closed right now.');
+ if(!/^\d{12}$/.test(a))return say(m,'Aadhaar must be exactly 12 digits.');
+ if(!/^[6-9]\d{9}$/.test(p))return say(m,'Enter a valid 10-digit Indian mobile number.');
+ const h=await sha(a);if(db.get('voted',{})[h])return say(m,'You have already voted. One person, one vote.');
+ if(!db.get('cands',[]).length)return say(m,'No candidates yet. Ask the admin to set up the election.');
+ voter={h,p,a};const o=db.get('otps',{});ob().forEach(b=>b.value='');say($('m1'),'');
+ if(o[p]&&o[p].exp>Date.now()){$('sms').classList.add('hide');vStep(1);return tick()}
+ const c=String(rnd(100000,900000));o[p]={d:await sha(c+p),exp:Date.now()+120000,t:0};db.set('otps',o);
+ $('sms').innerHTML='📱 <b>New message · ELECTIONS</b><br>Your voting OTP is <b style="font-size:1.3rem;letter-spacing:.15em">'+c+'</b>. Valid for 2 minutes. Do not share it.';
+ $('sms').classList.remove('hide');vStep(1);tick()}
+function tick(){clearInterval(tm);const f=()=>{const o=db.get('otps',{})[voter.p],s=o?Math.round((o.exp-Date.now())/1000):0;
+ $('left').textContent=s>0?'0'+Math.floor(s/60)+':'+String(s%60).padStart(2,'0'):'OTP expired';$('rs').classList.toggle('hide',s>0);if(s<=0)clearInterval(tm)};f();tm=setInterval(f,1000)}
+async function verifyOtp(){const o=db.get('otps',{}),x=o[voter.p],m=$('m1');
+ if(!x||x.exp<Date.now())return say(m,'OTP expired. Press Resend OTP.');
+ if(x.t>=3)return say(m,'Too many wrong attempts. Wait for this OTP to expire, then resend.');
+ if(await sha(ob().map(b=>b.value).join('')+voter.p)===x.d){delete o[voter.p];db.set('otps',o);clearInterval(tm);vStep(2)}
+ else{x.t++;db.set('otps',o);say(m,'Wrong OTP. '+(3-x.t)+' attempt(s) left.')}}
+async function startCam(){
+  stopCam();
+
+  const video = $('cam5');
+  const video2 = $('cam7');
+  say($('cm'), 'Requesting camera access…', '');
+  $('c5').disabled = true;
+  $('cb').disabled = true;
+
+  // Camera access requires HTTPS or localhost/127.0.0.1.
+  if (!window.isSecureContext ||
+      !navigator.mediaDevices ||
+      !navigator.mediaDevices.getUserMedia) {
+    faceOK = false;
+    say(
+      $('cm'),
+      'Camera API unavailable. Open this page using VS Code Live Server at localhost or 127.0.0.1, then allow camera access.',
+      'e'
+    );
+    gate();
+    return;
+  }
+
+  try {
+    // Ask for the user's webcam. If the preferred camera mode is unavailable,
+    // fall back to a basic video request.
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'user' },
+        audio: false
+      });
+    } catch (firstError) {
+      if (firstError.name === 'OverconstrainedError' ||
+          firstError.name === 'NotFoundError') {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: false
+        });
+      } else {
+        throw firstError;
+      }
+    }
+
+    video.srcObject = stream;
+    video2.srcObject = stream;
+
+    // Wait for the camera stream to be ready before enabling the next step.
+    await new Promise((resolve, reject) => {
+      if (video.readyState >= 2) {
+        resolve();
+        return;
+      }
+      const onReady = () => {
+        cleanup();
+        resolve();
+      };
+      const onError = () => {
+        cleanup();
+        reject(new Error('The camera stream loaded, but the video preview could not start.'));
+      };
+      const cleanup = () => {
+        video.removeEventListener('loadeddata', onReady);
+        video.removeEventListener('error', onError);
+      };
+      video.addEventListener('loadeddata', onReady, { once: true });
+      video.addEventListener('error', onError, { once: true });
+    });
+
+    await video.play();
+
+    // Mirror the preview and attach the same stream to the confirmation page.
+    video.style.transform = 'scaleX(-1)';
+    video2.style.transform = 'scaleX(-1)';
+
+    // Use FaceDetector only where the browser actually supports it.
+    if ('FaceDetector' in window) {
+      const fd = new FaceDetector({ fastMode: true, maxDetectedFaces: 3 });
+      fdt = setInterval(async () => {
+        try {
+          const faces = await fd.detect(video);
+          const count = faces.length;
+          faceOK = count === 1;
+
+          const message = count === 1
+            ? 'Camera live. One face detected.'
+            : count > 1
+              ? 'More than one face detected. Keep only the voter in view.'
+              : 'No face detected. Look directly at the camera.';
+
+          say($('cm'), message, faceOK ? 'k' : 'e');
+          say($('cm7'), message, faceOK ? 'k' : 'e');
+          gate();
+        } catch (detectError) {
+          console.error('Face detection error:', detectError);
+          faceOK = false;
+          say($('cm'), 'Camera is on, but face detection failed in this browser.', 'e');
+          say($('cm7'), 'Camera is on, but face detection failed in this browser.', 'e');
+          gate();
+        }
+      }, 800);
+      say($('cm'), 'Camera is on. Checking for one face…', '');
+      say($('cm7'), 'Camera is on. Checking for one face…', '');
+    } else {
+      // Demo fallback: this confirms camera access only, not identity or face count.
+      faceOK = true;
+      const message = 'Camera live. This browser does not support built-in face detection; face count is not verified.';
+      say($('cm'), message, 'k');
+      say($('cm7'), message, 'k');
+    }
+
+    gate();
+  } catch (error) {
+    faceOK = false;
+    gate();
+
+    let message;
+    switch (error.name) {
+      case 'NotAllowedError':
+      case 'PermissionDeniedError':
+        message = 'Camera permission was denied. Click the site icon beside the address bar → Site settings → Camera → Allow, then reload the page.';
+        break;
+      case 'NotFoundError':
+        message = 'No camera was found. Check that your webcam is connected and enabled.';
+        break;
+      case 'NotReadableError':
+      case 'TrackStartError':
+        message = 'The camera is busy or unavailable. Close Zoom, Teams, Camera, or other apps using it, then try again.';
+        break;
+      case 'OverconstrainedError':
+        message = 'The requested camera settings are unavailable. Check your webcam and try again.';
+        break;
+      case 'SecurityError':
+        message = 'The browser blocked camera access. Open this project through Live Server using localhost or 127.0.0.1.';
+        break;
+      default:
+        message = (error.name || 'CameraError') + ': ' + (error.message || 'Could not start camera.');
+    }
+
+    console.error('Online Voting System camera error:', error);
+    say($('cm'), message, 'e');
+    say($('cm7'), message, 'e');
+
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      stream = null;
+    }
+    video.srcObject = null;
+    video2.srcObject = null;
+  }
+}
+function gate(){$('c5').disabled=!faceOK;$('cb').disabled=!faceOK}
+function stopCam(){clearInterval(fdt);faceOK=false;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}}
+$('cands').addEventListener('change',()=>{$('nx').disabled=false});
+function renderCands(){$('cands').innerHTML=db.get('cands',[]).map(c=>`<label class="cand"><input type="radio" name="cand" value="${c.id}"><span class="sym">${esc(c.sym)}</span><span><b>${esc(c.name)}</b><small>${esc(c.party)}</small></span></label>`).join('');$('nx').disabled=true}
+const _vs=vStep;vStep=function(n){if(n===4)renderCands();_vs(n)};
+function toConfirm(){const r=document.querySelector('input[name=cand]:checked');pickId=+r.value;const c=db.get('cands',[]).find(x=>x.id===pickId);
+ $('pick').innerHTML=`<span class="sym">${esc(c.sym)}</span><span><b>${esc(c.name)}</b><small>${esc(c.party)}</small></span>`;vStep(5);gate()}
+async function cast(){if(!pickId||!voter)return;
+ if(!db.get('open',true))return say($('m5'),'Voting was closed by the admin.');
+ const vd=db.get('voted',{});if(vd[voter.h])return say($('m5'),'You have already voted.');
+ const cv=document.createElement('canvas');cv.width=120;cv.height=90;cv.getContext('2d').drawImage($('cam7'),0,0,120,90);
+ const id='VOT'+rnd(10000000,89999999);vd[voter.h]=1;db.set('voted',vd);
+ const v=db.get('votes',[]);v.push({id,cid:pickId,mask:'••••'+voter.a.slice(-4),t:Date.now(),ph:cv.toDataURL('image/jpeg',.4)});db.set('votes',v);
+ stopCam();$('rid').textContent=id;vStep(6);confetti()}
+function resetVoter(){voter=null;pickId=null;stopCam();['aad','ph'].forEach(i=>$(i).value='');vStep(0)}
+function confetti(){const c=$('cf'),x=c.getContext('2d');c.classList.remove('hide');c.width=innerWidth;c.height=innerHeight;
+ const cl=['#ff9933','#ffffff','#138808','#0b2a5b'],ps=Array.from({length:150},()=>({x:Math.random()*c.width,y:-Math.random()*c.height,v:2+Math.random()*4,s:5+Math.random()*7,c:cl[rnd(0,4)],w:Math.random()*6}));let f=0;
+ (function d(){x.clearRect(0,0,c.width,c.height);ps.forEach(p=>{p.y+=p.v;p.x+=Math.sin(p.y/30+p.w);x.fillStyle=p.c;x.fillRect(p.x,p.y,p.s,p.s*.6);x.strokeStyle='#0003';x.strokeRect(p.x,p.y,p.s,p.s*.6)});
+  if(++f<260)requestAnimationFrame(d);else c.classList.add('hide')})()}
+
+/* ---------- admin ---------- */
+let adm=false,tab='o',eid=null;
+function aLogin(){if($('au').value==='admin'&&$('ap').value==='admin123'){adm=true;$('am').textContent='';aShow()}else say($('am'),'Wrong username or password. Try again.')}
+function aShow(){$('aL').classList.toggle('hide',adm);$('aA').classList.toggle('hide',!adm);if(adm)aTab(tab)}
+function aTab(t){tab=t;$('tabs').innerHTML=[['o','📊 Overview'],['c','👤 Candidates'],['v','🗳️ Votes'],['s','⚙️ Election']].map(x=>`<button class="${x[0]===t?'on':''}" onclick="aTab('${x[0]}')">${x[1]}</button>`).join('');aBody()}
+function vt(v,c){return `<div class="card tw"><table><thead><tr><th>ID</th><th>Masked Aadhaar</th><th>Candidate</th><th>Time</th><th>Snapshot</th></tr></thead><tbody>${v.map(y=>{const x=c.find(z=>z.id===y.cid);return `<tr><td>${esc(y.id)}</td><td>${esc(y.mask)}</td><td>${x?esc(x.sym+' '+x.name):'(removed)'}</td><td>${new Date(y.t).toLocaleTimeString()}</td><td><img alt="Voter snapshot" src="${y.ph}"></td></tr>`}).join('')||'<tr><td colspan="5">No votes cast yet.</td></tr>'}</tbody></table></div>`}
+function aBody(){const c=db.get('cands',[]),v=db.get('votes',[]),b=$('aB'),open=db.get('open',true);
+ if(tab==='o'){const r=c.map(x=>({x,n:v.filter(y=>y.cid===x.id).length})).sort((a,b)=>b.n-a.n),lead=r[0];
+  b.innerHTML=`<div class="stats"><div class="stat">Total votes<b>${v.length}</b></div><div class="stat">Leading candidate<b style="font-size:1.15rem">${lead&&lead.n?esc(lead.x.sym+' '+lead.x.name):'–'}</b>${lead&&lead.n?lead.n+' votes':''}</div><div class="stat">Voting<b>${open?'Open':'Closed'}</b></div></div><div class="card"><h3>Live results (admin only)</h3>`+(r.map(({x,n})=>{const p=v.length?(n*100/v.length).toFixed(1):0;return `<div><b>${esc(x.sym)} ${esc(x.name)}</b> – ${p}% (${n})<div class="bar"><i style="width:${p}%"></i></div></div>`}).join('')||'No candidates yet.')+`</div><h3>Recent votes</h3>`+vt(v.slice(-5).reverse(),c)}
+ if(tab==='c'){b.innerHTML=`<div class="card"><h3>${eid?'Edit candidate':'Add candidate'}</h3><div class="row"><div><label for="cn">Name</label><input id="cn"></div><div><label for="cp">Party / label</label><input id="cp"></div><div><label for="cs">Symbol (emoji)</label><input id="cs" maxlength="4"></div></div><p style="margin:.8rem 0 0"><button class="g" onclick="saveC()">${eid?'Save changes':'Add candidate'}</button></p><p class="msg e" id="cmsg"></p></div><div class="card tw"><table><thead><tr><th>Symbol</th><th>Name</th><th>Party</th><th>Actions</th></tr></thead><tbody>${c.map(x=>`<tr><td class="sym">${esc(x.sym)}</td><td>${esc(x.name)}</td><td>${esc(x.party)}</td><td><button class="o" onclick="eid=${x.id};aBody()">Edit</button> <button class="r" onclick="delC(${x.id})">Delete</button></td></tr>`).join('')||'<tr><td colspan="4">No candidates yet.</td></tr>'}</tbody></table></div>`;
+  if(eid){const x=c.find(z=>z.id===eid);$('cn').value=x.name;$('cp').value=x.party||'';$('cs').value=x.sym}}
+ if(tab==='v')b.innerHTML=vt(v.slice().reverse(),c);
+ if(tab==='s')b.innerHTML=`<div class="card"><h3>Election</h3><label for="et">Election title</label><input id="et" value="${esc(title())}"><p style="margin:.8rem 0 0"><button class="s" onclick="db.set('title',$('et').value.trim()||'General Election 2026');say($('sm'),'Title saved.','k')">Save title</button></p><p class="msg" id="sm"></p>
+ <div class="st ${open?'on':'off'}">${open?'✅ Voting is OPEN':'⛔ Voting is CLOSED'}</div>
+ <button class="${open?'r':'g'}" onclick="${open?'closeV()':'db.set(\'open\',true);aBody()'}">${open?'Close voting':'Open voting'}</button><p style="color:var(--mut);margin:.4rem 0 1rem">You can close voting at any time.</p>
+ <button class="o" onclick="ask('Reset election','Delete all votes, voter records and OTPs? This cannot be undone.','Reset',()=>{db.set('votes',[]);db.set('voted',{});db.set('otps',{});aBody()})">Reset election (optional)</button> <button class="o" onclick="ask('Log out','Are you sure you want to log out?','Log out',()=>{adm=false;aShow()})">Log out</button></div>`}
+function closeV(){ask('Close election','Are you sure you want to close voting? No new votes will be accepted.','Close voting',()=>{db.set('open',false);aBody()})}
+function saveC(){const n=$('cn').value.trim(),p=$('cp').value.trim(),s=$('cs').value.trim();if(!n||!s)return say($('cmsg'),'Enter a name and a symbol.');
+ let c=db.get('cands',[]);if(eid){c=c.map(x=>x.id===eid?{...x,name:n,party:p,sym:s}:x);eid=null}else c.push({id:Date.now(),name:n,party:p,sym:s});db.set('cands',c);aBody()}
+function delC(i){const go=()=>{db.set('cands',db.get('cands',[]).filter(c=>c.id!==i));aBody()};db.get('votes',[]).length?ask('Delete candidate','Votes already exist. Delete this candidate anyway?','Delete',go):go()}
+setInterval(()=>{if(adm&&!$('admin').classList.contains('hide')&&(tab==='o'||tab==='v')&&$('md').classList.contains('hide'))aBody()},3000);
+route();
+</script></body></html>
