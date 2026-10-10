@@ -13,7 +13,15 @@ py -m pip install -r requirements.txt
 py app.py
 ```
 
-4. Keep the terminal open and visit **http://127.0.0.1:5000**. Do not use Live Server port 5500 for this Flask version.
+4. Keep the terminal open and visit **Extract the ZIP and open the extracted online_voting_original folder in VS Code.
+Open Terminal → New Terminal.
+Run:
+py -m pip install -r requirements.txt
+py app.py
+Keep the terminal open and visit https://online-voting-system-1ae3.onrender.com. Do not use Live Server port 5500 for this Flask version.
+Admin demo login in the original design: admin / admin123.
+
+**. Do not use Live Server port 5500 for this Flask version.
 
 Admin demo login in the original design: `admin` / `admin123`.
 
